@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: rgb(35, 43, 71);
+    height: 150px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.title{
+    justify-self: center;
+}
+
+.nav{
+    justify-self: flex-end;
+    display: flex;
+}
+
+.nav-btn{
+    margin: 15px;
+    cursor: pointer;
+}
+
+.img-wrap{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.food{
+    max-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.credit{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.text-wrapper{
+    width: 500px;
+}

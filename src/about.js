@@ -1,0 +1,1 @@
+import Pizza from './imgs/pizza.jpg';
