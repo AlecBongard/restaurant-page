@@ -1,6 +1,24 @@
+@font-face {
+    font-family: "La Belle Aurore";
+    src: url("./fonts/La_Belle_Aurore/LaBelleAurore-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Nanum Myeongjo";
+    src: url("./fonts/Nanum_Myeongjo/NanumMyeongjo-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nanum Myeongjo";
+    src: url("./fonts/Nanum_Myeongjo/NanumMyeongjo-Bold.ttf");
+    font-style: bold;
+}
+
 body{
     margin: 0;
     padding: 0;
+    font-family: "Nanum Myeongjo";
 }
 
 .header{
@@ -11,10 +29,12 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    font-family: "La Belle Aurore";
 }
 
 .title{
     justify-self: center;
+    margin: 0;
 }
 
 .nav{
@@ -56,5 +76,18 @@ body{
 }
 
 .text-wrapper{
+    margin-top: 25px;
     width: 500px;
+}
+
+.info-title{
+    color: white;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
 }
