@@ -45,8 +45,16 @@ const pageLoad = function(){
     const footer = document.createElement('footer');
     footer.classList.add('footer');
 
-    const author = document.createElement('p');
-    author.textContent = "Made by Alec Bongard";
+    const authorText = document.createElement('p');
+    authorText.textContent = "Made by ";
+
+    const author = document.createElement('a');
+    author.textContent = "Alec Bongard";
+    author.href="https://github.com/AlecBongard/restaurant-page";
+
+    authorText.append(author);
+
+    footer.appendChild(authorText);
 
 
     const pageContent = loadAbout();
@@ -69,6 +77,7 @@ const pageLoad = function(){
 
 
     content.appendChild(pageContent);
+    content.appendChild(footer);
     
 }
 

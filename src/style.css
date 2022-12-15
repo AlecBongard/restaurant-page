@@ -15,11 +15,19 @@
     font-style: bold;
 }
 
+
+.content{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 25px;
+}
+
 body{
     margin: 0;
     padding: 0;
     font-family: "Nanum Myeongjo";
     background-color: #fff;
+    height: 100%;
 }
 
 a{
@@ -134,4 +142,42 @@ a{
 
 .staff-img:hover{
     filter: brightness(50%);
+}
+
+.menu-wrap{
+    display: flex;
+}
+
+.menu-pic-wrap{
+    width: 55%;
+    overflow: hidden;
+    height:93vh;
+}
+
+.menu-pic{
+    max-height: 110%;
+    width: auto;
+}
+
+.menu-info{
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    height: 25px;
+    background-color: #334155;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    margin: 5px 0px;
+}
+
+footer a{
+    color: white;
 }

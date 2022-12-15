@@ -20,13 +20,6 @@ const loadAbout = function(){
     infoTitle.textContent = "BENVENUTI";
     infoTitle.classList.add('info-title');
 
-
-
-    /*const imgCredit = document.createElement('a');
-    imgCredit.textContent = "Photo by Chad Montano on Unsplash";
-    imgCredit.href = 'https://unsplash.com/photos/MqT0asuoIcU';
-    */
-
     const imgCredit = makeCred("Chad Montano", 'https://unsplash.com/photos/MqT0asuoIcU')
     imgCredit.classList.add('credit');
     //img end
@@ -106,7 +99,7 @@ const makeCred = function(author, url){
 
     credit.textContent = "Photo by ";
     credit.appendChild(link);
-    credit.append(" On ");
+    credit.append(" on ");
     credit.append(unsplash);
 
     return credit;
