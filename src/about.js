@@ -1,3 +1,4 @@
+import { makeCred } from './pageload';
 import Pizza from './imgs/pizza_full.jpg';
 import Chef1 from './imgs/chef1.jpg';
 import Chef2 from './imgs/chef2.jpg';
@@ -20,7 +21,7 @@ const loadAbout = function(){
     infoTitle.textContent = "BENVENUTI";
     infoTitle.classList.add('info-title');
 
-    const imgCredit = makeCred("Chad Montano", 'https://unsplash.com/photos/MqT0asuoIcU')
+    const imgCredit = makeCred("Chad Montano", 'https://unsplash.com/photos/MqT0asuoIcU');
     imgCredit.classList.add('credit');
     //img end
 
@@ -87,22 +88,6 @@ const loadAbout = function(){
     return pageContent;
 }
 
-const makeCred = function(author, url){
-    const unsplash = document.createElement('a');
-    unsplash.href="https://unsplash.com/";
-    unsplash.textContent = "Unsplash";
 
-    const credit = document.createElement('p');
-    const link = document.createElement('a');
-    link.textContent = author;
-    link.href = url;
-
-    credit.textContent = "Photo by ";
-    credit.appendChild(link);
-    credit.append(" on ");
-    credit.append(unsplash);
-
-    return credit;
-}
 
 export default loadAbout;

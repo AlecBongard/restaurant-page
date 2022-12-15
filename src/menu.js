@@ -1,5 +1,7 @@
+import { makeCred } from './pageload';
 import Penne from './imgs/food/penne.jpg';
-import Pizza from './imgs/pizza_full.jpg'
+import Pizza from './imgs/food/pizza_formatted.jpg'
+import Gnocchi from './imgs/food/gnocchi.jpg';
 
 const loadMenu = function(){
     const pageContent = document.createElement('div');
@@ -25,23 +27,41 @@ const loadMenu = function(){
     const menuTitle = document.createElement('h1');
     menuTitle.textContent = 'Menu';
 
-    const testDish = dishFactory('test', '$1000', 'test dish', Pizza);
-    const newItem = testDish.makeEntry();
+    const imgCredit = makeCred("Ben Lei", 'https://unsplash.com/photos/flFd8L7_B3g')
+    imgCredit.classList.add('menu-credit');
 
+    const pennePasta = dishFactory('Pasta d\'lorem ipsum', '$1000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum sollicitudin metus in vehicula. Sed porta luctus eros, id cursus nibh.', Penne,
+    "Ben Lei", 'https://unsplash.com/photos/flFd8L7_B3g');
+    const penneNode = pennePasta.makeEntry();
+
+    const pizzaDish = dishFactory('Donec scelerisque Pizza', '$1', 
+    'Donec scelerisque porttitor nisl, nec commodo nisi dapibus vel. Nulla suscipit quam at augue pellentesque mattis. Ut quis ullamcorper tortor, in feugiat ligula. Nam non tortor volutpat, tristique odio et, sagittis ante. Sed elit nisl, pellentesque in lacus vel, lobortis vehicula massa.', 
+    Pizza, "Chad Montano", 'https://unsplash.com/photos/MqT0asuoIcU');
+    const pizzaNode = pizzaDish.makeEntry();
+
+    const gnocchiDish = dishFactory('Gnocchi a la Nunc laoreet', '$55',
+    "Nunc laoreet blandit sem sed pretium. Nam sed lacus est. Nunc vitae auctor dolor.",
+    Gnocchi, "Shakti Rajpurohit", 'https://unsplash.com/photos/FvOGEAL2GPE');
+    const gnocchiNode = gnocchiDish.makeEntry();
     
 
-    menuInfo.append(menuTitle);
-    menuInfo.appendChild(newItem);
+    menuInfo.appendChild(menuTitle);
+    menuInfo.appendChild(penneNode);
+    menuInfo.appendChild(pizzaNode);
+    menuInfo.appendChild(gnocchiNode);
 
     menuWrap.appendChild(menuPicWrap);
     menuWrap.appendChild(menuInfo);
 
+    
+
+    menuPicWrap.appendChild(imgCredit);
 
 
     return pageContent;
 }
 
-const dishFactory = (dishName, price, desc, img) => {
+const dishFactory = (dishName, price, desc, img, picAuthor, picURL) => {
     const makeEntry = () => {
         const dishWrap = document.createElement('div');
         dishWrap.classList.add('dish-wrap');
@@ -54,11 +74,27 @@ const dishFactory = (dishName, price, desc, img) => {
         dishDesc.classList.add('dish-desc');
         dishDesc.textContent = desc;
 
+        const dishPrice = document.createElement('p');
+        dishPrice.classList.add('dish-price');
+        dishPrice.textContent = price;
+
         dishWrap.appendChild(title);
+        dishWrap.appendChild(dishPrice);
+        dishWrap.appendChild(dishDesc);
 
         dishWrap.addEventListener('mouseover', ()=>{
             const pic = document.querySelector('.menu-pic');
             pic.src = img;
+
+            const photoWrap = document.querySelector('.menu-pic-wrap');
+
+            const credit = document.querySelector('.menu-credit');
+            const newCredit = makeCred(picAuthor, picURL);
+            newCredit.classList.add('menu-credit');
+
+            photoWrap.replaceChild(newCredit, credit);
+
+
         })
 
         return dishWrap;

@@ -46,7 +46,7 @@ const pageLoad = function(){
     footer.classList.add('footer');
 
     const authorText = document.createElement('p');
-    authorText.textContent = "Made by ";
+    authorText.textContent = "Created by ";
 
     const author = document.createElement('a');
     author.textContent = "Alec Bongard";
@@ -81,4 +81,23 @@ const pageLoad = function(){
     
 }
 
-export default pageLoad;
+const makeCred = function(author, url){
+    const unsplash = document.createElement('a');
+    unsplash.href="https://unsplash.com/";
+    unsplash.textContent = "Unsplash";
+
+    const credit = document.createElement('p');
+    const link = document.createElement('a');
+    link.textContent = author;
+    link.href = url;
+
+    credit.textContent = "Photo by ";
+    credit.appendChild(link);
+    credit.append(" on ");
+    credit.append(unsplash);
+
+    return credit;
+}
+
+export {pageLoad,
+        makeCred};
