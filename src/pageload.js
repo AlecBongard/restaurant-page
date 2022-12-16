@@ -1,4 +1,4 @@
-import loadAbout from './about.js';
+import { loadAbout } from './about.js';
 
 
 const content = document.querySelector(".content");

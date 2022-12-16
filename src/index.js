@@ -1,7 +1,7 @@
-import pageLoad from './pageLoad.js';
-import loadAbout from './about.js';
-import loadMenu from './menu.js';
-import loadContact from './contact.js';
+import {pageLoad} from './pageLoad.js';
+import {loadAbout} from './about.js';
+import {loadMenu} from './menu.js';
+import {loadContact} from './contact.js';
 import './style.css';
 
 pageLoad();

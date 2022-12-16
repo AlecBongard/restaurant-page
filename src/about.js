@@ -90,4 +90,4 @@ const loadAbout = function(){
 
 
 
-export default loadAbout;
+export {loadAbout};

@@ -108,4 +108,4 @@ const dishFactory = (dishName, price, desc, img, picAuthor, picURL) => {
     }
 }
 
-export default loadMenu;
+export {loadMenu};
