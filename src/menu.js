@@ -2,6 +2,7 @@ import { makeCred } from './pageload';
 import Penne from './imgs/food/penne.jpg';
 import Pizza from './imgs/food/pizza_formatted.jpg'
 import Gnocchi from './imgs/food/gnocchi.jpg';
+import Lasagne from './imgs/food/lasagne.jpg';
 
 const loadMenu = function(){
     const pageContent = document.createElement('div');
@@ -43,12 +44,18 @@ const loadMenu = function(){
     "Nunc laoreet blandit sem sed pretium. Nam sed lacus est. Nunc vitae auctor dolor.",
     Gnocchi, "Shakti Rajpurohit", 'https://unsplash.com/photos/FvOGEAL2GPE');
     const gnocchiNode = gnocchiDish.makeEntry();
+
+    const lasagneDish = dishFactory('Garfield\'s Choice', '$2', 
+    'Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam pretium sit amet dui nec sagittis.',
+    Lasagne, 'sunorwind', 'https://unsplash.com/photos/PgkGsxjvGB4');
+    const lasagneNode = lasagneDish.makeEntry();
     
 
     menuInfo.appendChild(menuTitle);
     menuInfo.appendChild(penneNode);
     menuInfo.appendChild(pizzaNode);
     menuInfo.appendChild(gnocchiNode);
+    menuInfo.appendChild(lasagneNode);
 
     menuWrap.appendChild(menuPicWrap);
     menuWrap.appendChild(menuInfo);
